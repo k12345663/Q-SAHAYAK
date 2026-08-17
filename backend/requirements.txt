@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+qiskit==2.5.2
+qiskit-aer==0.17.2
+qiskit-algorithms==0.4.0
+qiskit-optimization==0.7.0

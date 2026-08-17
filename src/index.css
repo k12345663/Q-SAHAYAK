@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@import "@fontsource/public-sans/400.css";
+@import "@fontsource/public-sans/500.css";
+@import "@fontsource/public-sans/600.css";
+@import "@fontsource/public-sans/700.css";
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-devanagari/500.css";
+@import "@fontsource/noto-sans-devanagari/600.css";
+@import "@fontsource/noto-sans-devanagari/700.css";
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: 'Public Sans', 'Noto Sans Devanagari', -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root {
+  --bg: #f4f6f7;
+  --surface: #ffffff;
+  --surface-2: #eef1f3;
+  --border: #dde2e6;
+
+  --text: #16212b;
+  --text-muted: #4d5b67;
+  --text-faint: #7c8894;
+
+  --brand: #0c5f6e;
+  --brand-strong: #084853;
+  --brand-soft: #e2eff1;
+
+  --accent: #9a6a1f;
+  --accent-soft: #f5ecdb;
+
+  --success: #146c43;
+  --success-soft: #e2f3e9;
+  --warning: #9a6a1f;
+  --warning-soft: #f5ecdb;
+  --danger: #ab2c2c;
+  --danger-soft: #fbe9e9;
+
+  --shadow-sm: 0 1px 2px rgba(15, 30, 38, 0.06);
+  --shadow-md: 0 6px 20px rgba(15, 30, 38, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 30, 38, 0.14);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10161a;
+    --surface: #171f24;
+    --surface-2: #1d262c;
+    --border: #2a343b;
+
+    --text: #e7edf0;
+    --text-muted: #a4b0b8;
+    --text-faint: #6d7982;
+
+    --brand: #4fb6c4;
+    --brand-strong: #7bcbd6;
+    --brand-soft: #14343a;
+
+    --accent: #cf9f4f;
+    --accent-soft: #33291a;
+
+    --success: #4bc07f;
+    --success-soft: #123424;
+    --warning: #cf9f4f;
+    --warning-soft: #33291a;
+    --danger: #e8746a;
+    --danger-soft: #3a1c1a;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--brand-soft);
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+/* Custom select chevron so native controls match the rest of the form */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237c8894' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.3s ease-out both;
+}
